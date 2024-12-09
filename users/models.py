@@ -36,10 +36,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['USERNAME']
+    REQUIRED_FIELDS = ['username']
 
 
     def __str__(self):
-        return '{self.username} - {self.email} created-at {created_at}'
+        return f'{self.username}'
 
 # Create your models here.

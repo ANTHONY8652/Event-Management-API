@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Event
+from .models import Event, Attendee
+
 
 
 class EventSerializer(serializers.ModelSerializer):
@@ -17,3 +18,8 @@ class EventSerializer(serializers.ModelSerializer):
         if value <= 0:
             raise serializers.ValidationError('Event cannot have negative guests or attendees')
         return value
+
+class Attendee(serializers.ModelSerializer):
+    class Meta:
+        model = Attendee
+        fields = '__all__'
